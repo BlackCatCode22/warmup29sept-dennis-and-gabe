@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-public class WarmUP29Sep22 {
+public class WarmUP29sep22 {
     public static void main(String[] args) {
         // References:
         // https://www.w3schools.com/java/java_files_create.asp
@@ -20,6 +20,8 @@ public class WarmUP29Sep22 {
         //   https://www.w3schools.com/java/java_files_read.asp
         //   https://www.w3schools.com/java/java_arrays.asp
         //   https://www.geeksforgeeks.org/searching-for-characters-and-substring-in-a-string-in-java/
+        //   https://www.tutorialspoint.com/java/java_string_split.htm
+
 
         // Open a file and read it line by line.
         int lineCount = 0;
@@ -70,6 +72,25 @@ public class WarmUP29Sep22 {
         String aLine = "";
         aLine = linesInAnimalNameFile[2];
         System.out.println("\n aLine = " + aLine);
+
+        // Use split to parse the line.
+        String[] theWords;
+        theWords = aLine.split(",");
+        // Output the elements of theWords[]
+        for (int i=0; i< theWords.length; i++) {
+            System.out.println("theWords[" + i + "] = " + theWords[i]);
+        }
+
+        // Start from the beginning of the array and find the line containing hyena names.
+
+        for (int i=0; i<lineCount; i++){
+            if ("Hyena Names:".equals(linesInAnimalNameFile[i])) {
+                System.out.println("Match found at line: " + i + " !!");
+            }
+
+        }
+
+
 
 
     }
